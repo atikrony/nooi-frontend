@@ -1,0 +1,11 @@
+import type { ReactNode } from "react";
+import { Header } from "@/components/Public/Common/Header";
+
+export default function PublicLayout({ children }: { children: ReactNode }) {
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <Header />
+      <main className="flex-1">{children}</main>
+    </div>
+  );
+}
