@@ -5,7 +5,12 @@ import Link from "next/link";
 
 function GoogleIcon() {
   return (
-    <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fill="#4285F4"
         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -28,7 +33,16 @@ function GoogleIcon() {
 
 function EyeOpen() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
       <circle cx="12" cy="12" r="3" />
     </svg>
@@ -37,7 +51,16 @@ function EyeOpen() {
 
 function EyeClosed() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
       <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
       <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
@@ -48,14 +71,27 @@ function EyeClosed() {
 
 function ArrowRight() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <line x1="5" y1="12" x2="19" y2="12" />
       <polyline points="12 5 19 12 12 19" />
     </svg>
   );
 }
 
-function getStrength(password: string): { score: number; label: string; color: string } {
+function getStrength(password: string): {
+  score: number;
+  label: string;
+  color: string;
+} {
   if (!password) return { score: 0, label: "", color: "" };
   let score = 0;
   if (password.length >= 8) score++;
@@ -130,8 +166,8 @@ export default function SignupPage() {
   return (
     <div className="flex h-screen overflow-hidden bg-white">
       {/* Left panel — form */}
-      <div className="w-[430px] flex-shrink-0 flex flex-col justify-center px-12 py-10 overflow-y-auto">
-        <div className="w-full max-w-[340px] mx-auto">
+      <div className="w-107.5 shrink-0 flex flex-col justify-center px-12 py-10 overflow-y-auto">
+        <div className="w-full max-w-85 mx-auto">
           {/* Heading */}
           <h1 className="text-[28px] font-bold text-gray-900 leading-tight mb-1.5">
             Create account
@@ -152,7 +188,9 @@ export default function SignupPage() {
           {/* Divider */}
           <div className="flex items-center gap-3 mb-5">
             <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400 whitespace-nowrap">or sign up with email</span>
+            <span className="text-xs text-gray-400 whitespace-nowrap">
+              or sign up with email
+            </span>
             <div className="flex-1 h-px bg-gray-200" />
           </div>
 
@@ -214,7 +252,7 @@ export default function SignupPage() {
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className="h-[3px] flex-1 rounded-full transition-all duration-300"
+                        className="h-0.75 flex-1 rounded-full transition-all duration-300"
                         style={{
                           backgroundColor:
                             i <= strength.score ? strength.color : "#e5e7eb",
@@ -222,7 +260,10 @@ export default function SignupPage() {
                       />
                     ))}
                   </div>
-                  <p className="text-xs font-medium" style={{ color: strength.color }}>
+                  <p
+                    className="text-xs font-medium"
+                    style={{ color: strength.color }}
+                  >
                     Password strength: {strength.label}
                   </p>
                 </div>
@@ -257,13 +298,22 @@ export default function SignupPage() {
                 type="checkbox"
                 className="h-4 w-4 rounded border-gray-300 accent-[#1a3d2f] cursor-pointer"
               />
-              <label htmlFor="terms" className="text-sm text-gray-600 cursor-pointer">
+              <label
+                htmlFor="terms"
+                className="text-sm text-gray-600 cursor-pointer"
+              >
                 I agree to the{" "}
-                <Link href="/terms" className="text-[#1a3d2f] font-medium hover:underline">
+                <Link
+                  href="/terms"
+                  className="text-[#1a3d2f] font-medium hover:underline"
+                >
                   Terms of Service
                 </Link>{" "}
                 and{" "}
-                <Link href="/privacy" className="text-[#1a3d2f] font-medium hover:underline">
+                <Link
+                  href="/privacy"
+                  className="text-[#1a3d2f] font-medium hover:underline"
+                >
                   Privacy Policy
                 </Link>
               </label>
@@ -284,7 +334,10 @@ export default function SignupPage() {
           {/* Sign in link */}
           <p className="text-center text-sm text-gray-500 mt-6">
             Already have an account?{" "}
-            <Link href="/login" className="text-[#1a3d2f] font-semibold hover:underline">
+            <Link
+              href="/login"
+              className="text-[#1a3d2f] font-semibold hover:underline"
+            >
               Sign in
             </Link>
           </p>
@@ -293,10 +346,7 @@ export default function SignupPage() {
 
       {/* Right panel — masonry image gallery */}
       <div className="flex-1 overflow-y-auto bg-white">
-        <div
-          className="p-2"
-          style={{ columns: 3, columnGap: "8px" }}
-        >
+        <div className="p-2" style={{ columns: 3, columnGap: "8px" }}>
           {galleryImages.map((img, i) => (
             <div
               key={i}
